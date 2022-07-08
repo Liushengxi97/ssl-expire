@@ -7,14 +7,14 @@ from email.mime.text import MIMEText
 from email.header import Header
 
 # 获取变量
-mail_host = os.getenv('mail_host')  # 设置服务器
-mail_user = os.getenv('mail_user')   # 用户名
-mail_pass = os.getenv('mail_pass')  # 口令
-sender = os.getenv('mail_user')
-print(os.getenv('secrets'))
+mail_host = os.getenv('MAIL_HOST')  # 设置服务器
+mail_user = os.getenv('MAIL_USER')   # 用户名
+mail_pass = os.getenv('MAIL_PASS')  # 口令
+sender = os.getenv('MAIL_USER')
+print(os.getenv('SECRETS'))
 print(mail_host, mail_pass, mail_user, os.getenv('receivers'), os.getenv('domains'))
-receivers = os.getenv('receivers').split(';')  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
-domains = os.getenv('domains').split(';')
+receivers = os.getenv('RECEIVERS').split(';')  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
+domains = os.getenv('DOMAINS').split(';')
 
 
 def get_re_match_result(pattern, string):
