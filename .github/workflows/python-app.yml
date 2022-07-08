@@ -40,5 +40,11 @@ jobs:
 #       run: |
 #         pytest
     - name: Start CheckCert
+      env:
+        MAIL_HOST: ${{secrets.MAIL_HOST}}
+        MAIL_PASS: ${{secrets.MAIL_PASS}}
+        MAIL_USER: ${{secrets.MAIL_USER}}
+        RECEIVERS: ${{secrets.RECEIVERS}}
+        DOMAINS: ${{secrets.DOMAINS}}
       run: |
         python main.py
