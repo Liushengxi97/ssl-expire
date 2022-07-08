@@ -5,7 +5,7 @@ name: Check SSL Cert
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '40 6 * * *'
 
 permissions:
   contents: read
