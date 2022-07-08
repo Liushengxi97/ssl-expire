@@ -44,5 +44,6 @@ jobs:
         MAIL_USER: ${{secrets.MAIL_USER}}
         RECEIVERS: ${{secrets.RECEIVERS}}
         DOMAINS: ${{secrets.DOMAINS}}
+        DAYS: ${{secrets.DAYS}}
       run: |
         python main.py
