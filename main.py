@@ -11,10 +11,9 @@ mail_host = os.getenv('MAIL_HOST')  # 设置服务器
 mail_user = os.getenv('MAIL_USER')   # 用户名
 mail_pass = os.getenv('MAIL_PASS')  # 口令
 sender = os.getenv('MAIL_USER')
-print(os.getenv('SECRETS'))
-print(mail_host, mail_pass, mail_user, os.getenv('receivers'), os.getenv('domains'))
 receivers = os.getenv('RECEIVERS').split(';')  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
 domains = os.getenv('DOMAINS').split(';')
+days = int(os.getenv('DAYS'))
 
 
 def get_re_match_result(pattern, string):
@@ -69,7 +68,7 @@ if __name__ == "__main__":
         expire_date = get_cert_expire_date(domain)
         if not expire_date:
             message += f'域名{domain}已过期。\r\n'
-        elif expire_date < 25:
+        elif expire_date <= days:
             message += f'域名{domain}剩余{expire_date}天到期。\r\n'
     print(expire_date)
     try:
