@@ -4,8 +4,11 @@
 name: Check SSL Cert
 
 on:
+  push:
+    branches:
+      - master
   schedule:
-    - cron: '40 6 * * *'
+    - cron: '30 0 * * *'
 
 permissions:
   contents: read
